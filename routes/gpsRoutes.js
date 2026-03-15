@@ -1,5 +1,4 @@
 
-//console.log("gpsRoutes.js loaded");
 
 const express = require("express");
 const router = express.Router();
@@ -48,25 +47,5 @@ router.get("/latest-trucks", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-/*
-router.get("/test-socket", (req, res) => {
-  console.log("GET /api/test-socket hit");
 
-  const io = req.app.get("io");
-  io.emit("truck_update", {
-    truck_id: "TRUCK_1",
-    latitude: 23.45,
-    longitude: 85.32,
-    speed: 10,
-    timestamp: Date.now(),
-    route_deviation: false,
-    idle: false,
-    fuel_alert: "false"
-  });
-
-  console.log("Manual truck_update emitted");
-
-  res.json({ message: "Test socket event emitted" });
-});
-*/
 module.exports = router;
